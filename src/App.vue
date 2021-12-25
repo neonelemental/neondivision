@@ -1,20 +1,9 @@
 <template>
-  <main-layout>
-    <h2>Gissele</h2>
-    <slot/>
-  </main-layout>
+  <main>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
+  </main>
 </template>
-
-<script>
-import MainLayout from '@/layouts/MainLayout'
-
-export default {
-  name: 'App',
-  components: {
-    MainLayout
-  }
-}
-</script>
-
-<style>
-</style>
