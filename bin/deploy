@@ -1,10 +1,19 @@
-#!/usr/bin/env sh
+##!/usr/bin/env sh
+#
+#set -e
+#yarn run build
+#cd dist
+#git init
+#git add .
+#git commit -m 'deploy'
+#git push -f git@github.com:neonelemental/neondivision.git master:gh-pages
+#cd -
 
-set -e
-yarn run build
-cd dist
-git init
-git add .
-git commit -m 'deploy'
-git push git@github.com:neonelemental/neondivision.git master:gh-pages
-cd -
+yarn build;
+cd ../neonelemental.github.io;
+rm -r *;
+mv ../neondivision/dist/* .;
+echo neondivision.com >> ./CNAME;
+git add .;
+git commit -m "`date`";
+git push origin master;
